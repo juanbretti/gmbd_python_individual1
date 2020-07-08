@@ -3,7 +3,7 @@
 Using PyCharm as IDE, that's why I need to address the complete path to the package.
 """
 # Import the libraries
-from IndividualAssignment1.Delivery.mypackage import demo as aux_functions
+from mypackage import demo as aux_functions
 
 # Create opening message
 print('Welcome to Human Behavior Prediction by Juan Pedro Bretti Mandarano')
