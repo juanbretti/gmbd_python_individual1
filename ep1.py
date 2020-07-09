@@ -10,11 +10,11 @@ Main code to run the game.
 from mypackage import demo as aux_functions
 
 # Constants
-MS = 0
-PS = 0
+MS = PS = 0
 xi = 1234
+# Game select options
 game_levels = {1: 'Easy', 2: 'Difficult'}
-
+game_numbers = (0, 1)
 # Initialize the previous throw counters
 throw00 = throw01 = throw10 = throw11 = 0
 player_move_previous = None
@@ -22,15 +22,23 @@ player_move_previous = None
 # Create opening message
 print('Welcome to Human Behavior Prediction by Juan Pedro Bretti Mandarano')
 # Set up the game size
-select_difficulty = aux_functions.read_int(possible=game_levels)
-moves = aux_functions.read_positive()
+select_difficulty = aux_functions.read_int(possible=game_levels,
+                                           message_try='Choose the type of game %s: ' % ('(' + ', '.join('{}: {}'.format(k, v) for k, v in game_levels.items()) + ')',),
+                                           message_error='Only accepts the values %s, try again.' % (tuple(game_levels.keys()),)
+                                           )
+moves = aux_functions.read_positive(message_try='Enter the number of moves: ',
+                                    message_error='Only accepts positive integers, try again.'
+                                    )
 
 for turn in range(moves):
 
     # Capture moves
     # As per assignment, the computer move is calculated before the player and even if is not necessary
     pre_computer_move, xi = aux_functions.linear_congruence(xi)
-    player_move = aux_functions.read_int(possible=(0, 1), move=turn)
+    player_move = aux_functions.read_int(possible=game_numbers,
+                                         message_try='Choose your move number %s %s: ' % (turn + 1, game_numbers),
+                                         message_error = 'Only accepts the values %s, try again.' % (game_numbers,)
+                                         )
 
     # Counters of previous movements
     if player_move_previous is None:

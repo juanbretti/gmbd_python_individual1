@@ -9,7 +9,8 @@ Additional functions for the 'Human Behavior Prediction' application.
 
 def linear_congruence(xi):
     """
-    Function to calculate linear congruences value and computer bet
+    Function to calculate linear congruences value and computer bet.
+    xi: Model seed
     """
 
     a = 22695477
@@ -23,20 +24,13 @@ def linear_congruence(xi):
     return comp_move, xi_plus_1
 
 
-def read_int(possible, move=None):
+def read_int(possible, message_try='Type a value', message_error='Error'):
     """
     Function to read integer number only, inside the listed possibles.
     possible: Tuple with possible values to be input by the user.
-    move: If move is set, then prints the 'move' number.
+    message_try: Message to display when requesting the input from the user.
+    message_error: Message to display when the user inputs something outside the possible values.
     """
-
-    # Messages
-    if move is not None:
-        message_try = 'Choose your move number %s %s: ' % (move + 1, possible)
-        message_error = 'Only accepts the values %s, try again.' % (possible,)
-    else:
-        message_try = 'Choose the type of game %s: ' % ('(' + ', '.join('{}: {}'.format(k, v) for k, v in possible.items()) + ')',)
-        message_error = 'Only accepts the values %s, try again.' % (tuple(possible.keys()),)
 
     # Loop until the user enters a value in the possibles
     correct_value = False
@@ -54,15 +48,12 @@ def read_int(possible, move=None):
     return user_value
 
 
-def read_positive():
+def read_positive(message_try='Type a value', message_error='Error'):
     """
     Function to read only natural numbers (positive integers excluding 0).
-    No additional arguments has to be defined.
+    message_try: Message to display when requesting the input from the user.
+    message_error: Message to display when the user inputs something outside the possible values.
     """
-
-    # Messages
-    message_try = 'Enter the number of moves: '
-    message_error = 'Only accepts positive integers, try again.'
 
     # Loop until the user enters a value in the possibles
     correct_value = False
