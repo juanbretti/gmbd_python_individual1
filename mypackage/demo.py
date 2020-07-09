@@ -11,7 +11,7 @@ def linear_congruence(xi):
     """
     Function to calculate linear congruences value and computer bet.
     :param int xi: Seed.
-    :return: Computer move between (0, 1), Seed
+    :returns: Computer move between (0, 1), Seed
     """
 
     a = 22695477
@@ -31,7 +31,7 @@ def read_int(possible, message_try='Type a value', message_error='Error'):
     :param tuple-dict possible: Possible values to be input by the user.
     :param str message_try: Message to display when requesting the input from the user.
     :param str message_error: Message to display when the user inputs something outside the possible values.
-    :return: User input value
+    :returns: User input value
     """
 
     # Loop until the user enters a value in the possibles
@@ -55,7 +55,7 @@ def read_positive(message_try='Type a value', message_error='Error'):
     Function to read only natural numbers (positive integers excluding 0).
     :param str message_try: Message to display when requesting the input from the user.
     :param str message_error: Message to display when the user inputs something outside the possible values.
-    :return: User input value
+    :returns: User input value
     """
 
     # Loop until the user enters a value in the possibles
