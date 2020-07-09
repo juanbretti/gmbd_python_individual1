@@ -10,8 +10,10 @@ Additional functions for the 'Human Behavior Prediction' application.
 def linear_congruence(xi):
     """
     Function to calculate linear congruences value and computer bet.
-    :param int xi: Seed.
-    :returns: Computer move between (0, 1), Seed
+    :param xi: Seed.
+    :type xi: int
+    :return: Computer move between (0, 1), Seed.
+    :rtype: list
     """
 
     a = 22695477
@@ -28,10 +30,14 @@ def linear_congruence(xi):
 def read_int(possible, message_try='Type a value', message_error='Error'):
     """
     Function to read integer number only, inside the listed possibles.
-    :param tuple-dict possible: Possible values to be input by the user.
-    :param str message_try: Message to display when requesting the input from the user.
-    :param str message_error: Message to display when the user inputs something outside the possible values.
-    :returns: User input value
+    :param possible: Possible values to be input by the user.
+    :type possible: tuple-dict
+    :param message_try: Message to display when requesting the input from the user.
+    :type message_try: str
+    :param message_error: Message to display when the user inputs something outside the possible values.
+    :type message_error: str
+    :return: User input value.
+    :rtype: int
     """
 
     # Loop until the user enters a value in the possibles
@@ -53,9 +59,12 @@ def read_int(possible, message_try='Type a value', message_error='Error'):
 def read_positive(message_try='Type a value', message_error='Error'):
     """
     Function to read only natural numbers (positive integers excluding 0).
-    :param str message_try: Message to display when requesting the input from the user.
-    :param str message_error: Message to display when the user inputs something outside the possible values.
-    :returns: User input value
+    :param message_try: Message to display when requesting the input from the user.
+    :type message_try: str
+    :param message_error: Message to display when the user inputs something outside the possible values.
+    :type message_error: str
+    :return: User input value.
+    :rtype: int
     """
 
     # Loop until the user enters a value in the possibles
