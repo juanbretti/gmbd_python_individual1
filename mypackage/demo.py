@@ -31,7 +31,7 @@ def read_int(possible, message_try='Type a value', message_error='Error'):
     """
     Function to read integer number only, inside the listed possibles.
     :param possible: Possible values to be input by the user.
-    :type possible: tuple-dict
+    :type possible: tuple
     :param message_try: Message to display when requesting the input from the user.
     :type message_try: str
     :param message_error: Message to display when the user inputs something outside the possible values.
